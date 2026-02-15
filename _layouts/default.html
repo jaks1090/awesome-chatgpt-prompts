@@ -8,12 +8,111 @@
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
+    <style>
+      .site-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin: 1rem 0 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #d0d7de;
+      }
+      .site-nav a {
+        padding: 0.35rem 0.8rem;
+        border: 1px solid #d0d7de;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+      .site-nav a:hover {
+        background: #f6f8fa;
+      }
+      .page-intro {
+        margin-bottom: 1.5rem;
+        color: #57606a;
+      }
+      .feature-grid {
+        display: grid;
+        gap: 1rem;
+      }
+      @media (min-width: 760px) {
+        .feature-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      .feature-card {
+        padding: 1rem;
+        border: 1px solid #d0d7de;
+        border-radius: 10px;
+        background: #fff;
+      }
+      .stats-grid {
+        display: grid;
+        gap: 0.8rem;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      }
+      .stat-card {
+        border: 1px solid #d0d7de;
+        border-radius: 10px;
+        padding: 0.9rem;
+        background: linear-gradient(180deg, #ffffff 0%, #f6f8fa 100%);
+      }
+      .stat-value {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+      .maps-layout {
+        display: grid;
+        gap: 1rem;
+      }
+      @media (min-width: 920px) {
+        .maps-layout {
+          grid-template-columns: 320px 1fr;
+        }
+      }
+      .panel {
+        border: 1px solid #d0d7de;
+        border-radius: 10px;
+        background: #fff;
+        padding: 1rem;
+      }
+      .mock-map {
+        min-height: 340px;
+        border-radius: 10px;
+        border: 1px dashed #8c959f;
+        background:
+          radial-gradient(circle at 25% 30%, #8ad4ff 0 6px, transparent 7px),
+          radial-gradient(circle at 65% 55%, #ff8a8a 0 6px, transparent 7px),
+          radial-gradient(circle at 45% 78%, #9dffad 0 6px, transparent 7px),
+          linear-gradient(120deg, #eef7ff 0%, #eaf8f0 55%, #fff4e6 100%);
+        position: relative;
+      }
+      .mock-map::after {
+        content: "Prototype map canvas";
+        position: absolute;
+        right: 12px;
+        bottom: 10px;
+        color: #57606a;
+        font-size: 0.85rem;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 6px;
+        padding: 0.2rem 0.5rem;
+      }
+    </style>
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
       {% if site.title and site.title != page.title %}
       <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
       {% endif %}
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="{{ "/" | relative_url }}">Home</a>
+        <a href="{{ "/about" | relative_url }}">About</a>
+        <a href="{{ "/analytics" | relative_url }}">Analytics</a>
+        <a href="{{ "/maps" | relative_url }}">Maps UI</a>
+        <a href="{{ "/content-hub" | relative_url }}">Content Hub</a>
+      </nav>
 
       {{ content }}
 

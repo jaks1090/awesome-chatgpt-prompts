@@ -32,6 +32,14 @@ The folks at [Steamship](https://www.steamship.com/build?utm_source=github&utm_m
 
 👷‍♂️ **[Build your own GPT Prompt App](https://www.steamship.com/build?utm_source=github&utm_medium=explainer&utm_campaign=awesome_gpt_prompts&utm_id=awesome_gpt_prompts)**
 
+
+### Explore the site
+
+- [About](/about)
+- [Analytics](/analytics)
+- [Maps UI](/maps)
+- [Content Hub](/content-hub)
+
 ---
 
 ### Using ChatGPT Desktop App
